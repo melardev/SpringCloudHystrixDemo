@@ -1,0 +1,26 @@
+server:
+  port: 8010
+eureka:
+  client:
+    service-url:
+      defaultZone: http://localhost:8761/eureka
+    registry-fetch-interval-seconds: 1 #fetch registry each second
+  instance:
+    lease-renewal-interval-in-seconds: 1 # renew registration each second
+
+
+turbine:
+  aggregator:
+    clusterConfig: SAMPLE-HYSTRIX-AGGREGATE
+    appConfig: SAMPLE-HYSTRIX-AGGREGATE
+
+spring:
+  application:
+    name: hystrix-app
+management:
+  endpoints:
+    web:
+      exposure:
+        include: "*"
+
+
